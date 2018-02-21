@@ -1,0 +1,33 @@
+version: '3'
+services: 
+  web:
+    build: ./nginx
+    links:
+      - app
+    environment:
+      HOST_NAME: ${HOST_NAME}
+      APP_PORT: ${PORT}
+    volumes:
+      - nginx-certs:/etc/nginx/certs:ro
+    ports:
+      - 80:80
+      - 443:443
+    restart: "no"
+  app:
+    build: './'
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      PORT: ${PORT}
+    links:
+      - mongo
+      - redis
+    ports: 
+      - 3000:3000
+  mongo:
+    image: mongo
+  redis:
+    image: redis
+
+  
+volumes:
+  nginx-certs:

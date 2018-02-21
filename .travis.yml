@@ -1,0 +1,23 @@
+sudo: required
+language: node_js
+cache:
+  directories:
+  - node_modules
+services:
+  - mongodb
+node_js:
+  - lts/*
+script:  npm install --silent && npm test
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: chmod +x $TRAVIS_BUILD_DIR/bin/deploy-dev.sh && bash $TRAVIS_BUILD_DIR/bin/deploy-dev.sh
+    on:
+      branch: develop
+
+  - provider: script
+    skip_cleanup: true
+    script: chmod +x $TRAVIS_BUILD_DIR/bin/deploy-dev.sh && bash $TRAVIS_BUILD_DIR/bin/deploy-dev.sh
+    on:
+      branch: master
