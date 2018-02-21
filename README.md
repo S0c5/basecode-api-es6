@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Base Project for awesome API
 Welcome to an awesome API base project
 
