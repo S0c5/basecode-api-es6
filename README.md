@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Base Project for awesome API
 Welcome to an awesome API base project
 
@@ -30,4 +31,5 @@ Please verify that your node version is > 8.0 and mongodb is running
 
 Thanks! 
 Happy hacking.
+
 

@@ -1,17 +1,15 @@
 {
-  "name": "api-proxy",
+  "name": "app-base-code",
   "version": "0.1.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "NODE_ENV=test ./test.sh ./test",
     "start": "babel-node app.js",
-    "lint": "eslint *.js",
-    "lint:fix": "eslint --fix ./app/**/*.js",
-    "build:docs": "mmdc -i ./docs/*.mmd  -o ./docs/flowcalls.pdf -p .puppeterrc.json"
+    "lint": "eslint *.js"
   },
-  "author": "david barinas <david.barinas@sourcemeridian.com>",
-  "license": "ISC",
+  "author": "david barinas <david.barinas@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "await-sleep": "0.0.1",
     "babel-cli": "^6.24.1",
